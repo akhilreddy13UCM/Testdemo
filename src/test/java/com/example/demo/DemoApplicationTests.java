@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @Slf4j
 class DemoApplicationTests {
 	@BeforeEach
@@ -29,7 +31,13 @@ class DemoApplicationTests {
 	@Test
 	@DisplayName("Test")
 	void Test1() {
-		log.info("test1 is run");
+		int a=number(5);
+		Assertions.assertEquals(5,5);
+		assertThat("Apple").matches("a");
+		//log.info("test1 is run");
 	}
 
+	int number(int num){
+		return num+num;
+	}
 }
